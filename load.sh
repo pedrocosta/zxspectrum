@@ -12,7 +12,7 @@ filename="${fullname%.*}"
 if [[ "$extension" == "asm" ]]; then
     pasmo --tapbas "$filename.asm" "$filename.tap"
 elif [[ "$extension" == "bas" ]]; then
-    zmakebas -o "$filename.tap" "$filename.bas"
+    zmakebas -a 1 -o "$filename.tap" "$filename.bas"
 elif [[ "$extension" != "tap" ]]; then
     echo "O ficheiro tem de ser .bas, .asm ou .tap"
     exit 1
